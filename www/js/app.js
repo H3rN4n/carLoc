@@ -1,4 +1,4 @@
-// Ionic Starter App
+7// Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -55,13 +55,19 @@ angular.module('starter', ['ionic', 'ngCordova'])
           position: latLng
       });      
 
-      var infoWindow = new google.maps.InfoWindow({
+      /*var infoWindow = new google.maps.InfoWindow({
           content: "Here I am!"
+      });*/
+      
+      var coordsWindow = new google.maps.InfoWindow({
+          content: 'Posicion ---- Lat :' + position.coords.latitude + '   Long: ' + position.coords.longitude
       });
+      
+      coordsWindow.open($scope.map, marker);
 
-      google.maps.event.addListener(marker, 'click', function () {
+      /*google.maps.event.addListener(marker, 'click', function () {
           infoWindow.open($scope.map, marker);
-      });
+      });*/
 
     });
 
